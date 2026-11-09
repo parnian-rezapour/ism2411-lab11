@@ -33,3 +33,22 @@ print(customer)
 
 del customer["email"]
 print(customer)
+
+# Exercise 3 - Safe lookup
+
+print(customer.get("email", "no email on file"))
+
+try:
+    print(customer["email"])
+except KeyError as error:
+    print("KeyError caught:", error)
+
+
+# Exercise 4 - Iterate
+
+for key, value in customer.items():
+    print(f"{key}: {value}")
+
+# Without .items(), the loop returns only the keys, not key-value pairs.
+for key in customer:
+    print(key)
